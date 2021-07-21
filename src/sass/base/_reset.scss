@@ -1,0 +1,38 @@
+* {
+  outline: none;
+}
+
+html {
+  overflow-y: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+::selection {
+  background: var(--v-primary-base);
+  color: #fff;
+}
+
+html {
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-button:start:decrement,
+  ::-webkit-scrollbar-button:end:increment {
+    display: none;
+  }
+
+  ::-webkit-scrollbar-track-piece {
+    background-color: $gray--20;
+    -webkit-border-radius: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb:vertical {
+    background-color: var(--v-primary-base);
+    -webkit-border-radius: 6px;
+  }
+}

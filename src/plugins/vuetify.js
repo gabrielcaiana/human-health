@@ -1,38 +1,44 @@
-import Vue from 'vue';
-import Vuetify from 'vuetify/lib';
-import VueI18n from 'vue-i18n';
-import localePt from 'vuetify/lib/locale/pt';
-import 'vuetify/dist/vuetify.min.css';
+import Vue from "vue";
+import Vuetify from "vuetify/lib";
+import VueI18n from "vue-i18n";
+import localePt from "vuetify/lib/locale/pt";
+import "vuetify/dist/vuetify.min.css";
 
 Vue.use(Vuetify);
 Vue.use(VueI18n);
 
 const messages = {
   pt: {
-    $vuetify: localePt
-  }
+    $vuetify: localePt,
+  },
 };
 
 const i18n = new VueI18n({
-  locale: 'pt',
-  messages
+  locale: "pt",
+  messages,
 });
 
 export default new Vuetify({
   lang: {
-    t: (key, ...params) => i18n.t(key, params)
+    t: (key, ...params) => i18n.t(key, params),
   },
   icons: {
-    iconfont: 'mdi'
+    iconfont: "mdi",
   },
   theme: {
     dark: false,
     options: {
-      customProperties: true
+      customProperties: true,
     },
     themes: {
-      light: {},
-      dark: {}
-    }
-  }
+      light: {
+        primary: "#000063",
+        secondary: "#6746c3",
+      },
+      dark: {
+        primary: "#7f0000",
+        secondary: "#f05545",
+      },
+    },
+  },
 });

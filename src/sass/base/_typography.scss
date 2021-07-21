@@ -1,0 +1,67 @@
+@import "variables";
+
+html,
+body,
+.v-application {
+  font-family: $font-face-secondary;
+}
+
+a,
+p,
+span,
+label,
+input,
+button,
+textarea,
+select {
+  font-family: $font-face-secondary;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-family: $font-face-primary;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  font-family: $font-face-primary;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-family: $font-face-primary;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-family: $font-face-primary;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 1rem;
+  font-family: $font-face-primary;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 0.8rem;
+  font-family: $font-face-primary;
+  font-weight: 400;
+}
+
+a {
+  color: var(--v-primary-base);
+  transition: all ease 0.1s;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    color: initial;
+  }
+}
