@@ -1,8 +1,8 @@
 const globalSassFiles = ["./src/sass/base/_variables.scss"];
 
 module.exports = {
-  transpileDependencies: ['vuetify'],
-  publicPath: './',
+  transpileDependencies: ["vuetify"],
+  publicPath: "./",
   lintOnSave: false,
 
   chainWebpack: (config) => {
