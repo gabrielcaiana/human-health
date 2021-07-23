@@ -1,13 +1,10 @@
 <template>
   <v-container class="login" v-resize="onResize">
     <v-row>
-      <v-col xl="5" lg="5" md="5" sm="6">
-        <v-form
-          class="login__form"
-          @submit.prevent="login"
-          lazy-validation
-          v-model="valid"
-        >
+      <v-col class="login__form" xl="5" lg="5" md="5" sm="6">
+        <p class="login__logo"><span>H</span>uman<span> H</span>ealth</p>
+        <p>Informe seu email e senha para realizar o login</p>
+        <v-form @submit.prevent="login" ref="form" lazy-validation v-model="valid">
           <div>
             <v-text-field
               outlined
@@ -16,7 +13,7 @@
               label="Email"
               type="text"
               v-model="form.email"
-              :rules="[required]"
+              :rules="[required, email]"
             >
             </v-text-field>
             <v-text-field
@@ -49,18 +46,26 @@
           </div>
         </v-form>
       </v-col>
-      <v-col xl="7" lg="7" md="7" sm="6" v-if="innerWidth >= 600">
+      <v-col
+        class="login__ilustration"
+        xl="7"
+        lg="7"
+        md="7"
+        sm="6"
+        v-if="innerWidth >= 600"
+      >
         <img
-          class="login__ilustration"
+        class="login__ilustration--img"
           src="@/assets/ilustrations/login.svg"
           alt="Praticando exercicio físico"
         />
       </v-col>
-
-      <v-col class="login__footer">
-        <p>© Human Health {{ currentYear }}. Todos os direitos reservados</p>
-      </v-col>
     </v-row>
+    <p class="login__footer">
+      © Human Health {{ currentYear }}. Todos os direitos reservados
+    </p>
+
+    <AppDialogForgotPassword :dialog="dialog" @close="closeDialog()" />
   </v-container>
 </template>
 
@@ -71,6 +76,7 @@ export default {
 
   components: {
     BaseButton: () => import("@/components/commons/base-button.vue"),
+     AppDialogForgotPassword: () => import('@/components/account/app-dialog-forgot-password'),
   },
 
   data: () => ({
@@ -111,7 +117,16 @@ export default {
 .login {
   height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+
+  &__logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+
+    span {
+      color: var(--v-primary-base);
+    }
+  }
 
   &__form {
     display: flex;
@@ -120,8 +135,25 @@ export default {
   }
 
   &__ilustration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 80%;
     max-width: 900px;
+
+    &--img {
+      width: 80%;
+    }
+  }
+
+  &__forgot {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  &__footer {
+    text-align: center;
   }
 }
 </style>
