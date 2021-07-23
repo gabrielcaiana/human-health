@@ -42,4 +42,13 @@ export default [
     name: "login",
     component: () => import("@/views/Account/Login.vue"),
   },
+  {
+    path: "/dashboard",
+    meta: {
+      public: false,
+      title: "Dashboard",
+    },
+    name: "dashboard",
+    component: () => import("@/views/Dashboard.vue"),
+  },
 ];
