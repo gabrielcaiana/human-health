@@ -36,9 +36,10 @@
                 readonly
                 v-bind="attrs"
                 v-on="on"
+                :rules="[required]"
               ></v-text-field>
             </template>
-            <v-date-picker v-model="form.dataNascimento" no-title scrollable>
+            <v-date-picker v-model="form.dataNascimento" no-title scrollable locale="pt-br">
               <v-spacer></v-spacer>
               <v-btn text color="grey" @click="menu = false"> Fechar </v-btn>
               <v-btn text color="primary" @click="$refs.menu.save(form.dataNascimento)">
@@ -60,7 +61,7 @@
           </v-text-field>
         </v-col>
         <v-col cols="12" sm="6">
-          <v-select :items="items" v-model="form.genero" label="Gênero" outlined></v-select>
+          <v-select :rules="[required]" :items="items" v-model="form.genero" label="Gênero" outlined></v-select>
         </v-col>
         <v-col cols="12">
           <v-text-field
@@ -115,7 +116,7 @@
       <v-row>
         <v-col cols="12" class="px-0 py-4">
           <BaseButton
-            outlined
+            text
             block
             color="primary"
             @click="back"
