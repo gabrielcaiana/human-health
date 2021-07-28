@@ -3,10 +3,10 @@
     <v-dialog :value="dialog" width="500" @input="close">
       <v-card>
         <v-card-title class="text-h5 primary white--text">
-          Privacy Policy
+          Recuperação de senha
         </v-card-title>
 
-        <v-container>
+        <v-container class="px-6">
           <h3 class="grey--text mb-2">
             Informe seu email para recuperar a senha
           </h3>
