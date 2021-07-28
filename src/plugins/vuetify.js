@@ -32,12 +32,12 @@ export default new Vuetify({
     },
     themes: {
       light: {
-        primary: "#6746c3",
-        secondary: "#000063",
+        primary: "#6596E2",
+        secondary: "#FF3F62",
       },
       dark: {
-        primary: "#7f0000",
-        secondary: "#f05545",
+        primary: "#6596E2",
+        secondary: "#FF3F62"
       },
     },
   },

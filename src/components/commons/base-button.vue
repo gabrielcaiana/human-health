@@ -9,7 +9,8 @@
     :height="height"
     v-bind="$attrs"
     v-on="$listeners"
-  />
+  >
+  </v-btn>
 </template>
 
 <script>
@@ -18,28 +19,28 @@ export default {
   props: {
     title: {
       type: String,
-      require: true
+      require: true,
     },
 
     type: {
       type: String,
-      default: 'button'
+      default: "button",
     },
 
     color: {
       type: String,
-      require: true
+      require: true,
     },
 
     block: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
     height: {
       type: String,
-      default: '42'
+      default: "42",
     }
-  }
+  },
 };
 </script>
